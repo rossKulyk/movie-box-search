@@ -5,6 +5,9 @@ import { apiGet } from "../misc/config";
 export default function Home() {
     const [input, setInput] = useState("");
     const [results, setResults] = useState(null);
+    const [searchOption, setSearchOption] = useState("shows");
+    // boolean to display if searchOption is true
+    const isShowsSearch = searchOption === "shows";
 
     function onInputchange(evt) {
         setInput(evt.target.value);
@@ -12,15 +15,8 @@ export default function Home() {
     }
 
     function onSearch() {
-        // https://api.tvmaze.com/search/shows?q=girls
-        // fetch(`https://api.tvmaze.com/search/shows?q=${input}`)
-        //     .then((response) => response.json())
-        //     .then((result) => {
-        //         console.log("FETCH RESULT > ", result);
-        //         setResults(result);
-        //     });
-        apiGet(`/search/shows?q=${input}`).then((result) => {
-            console.log("onSearch result > ", result);
+        apiGet(`/search/${searchOption}?q=${input}`).then((result) => {
+            // console.log("onSearch result > ", result);
             setResults(result);
         });
     }
@@ -39,25 +35,55 @@ export default function Home() {
             return <div>No results</div>;
         }
         if (results && results.length > 0) {
-            return (
-                <div>
-                    {results.map((item) => {
-                        return <div key={item.show.id}>{item.show.name}</div>;
-                    })}
-                </div>
-            );
+            // teneraty, return based on fetched result, item-show or item-person
+            return results[0].show
+                ? results.map((item) => {
+                      return <div key={item.show.id}>{item.show.name}</div>;
+                  })
+                : results.map((item) => {
+                      return <div key={item.person.id}>{item.person.name}</div>;
+                  });
         }
         return null;
     }
+
+    function onRadioChange(evt) {
+        // evt.target.value
+        setSearchOption(evt.target.value);
+    }
+    // console.log("SearchOption > ", searchOption);
 
     return (
         <MainPageLayout>
             <input
                 type="text"
+                placeholder="Search"
                 onChange={onInputchange}
                 onKeyDown={onKeyDown}
                 value={input}
             />
+            <div>
+                <label htmlFor="shows-search">
+                    Shows{" "}
+                    <input
+                        id="shows-search"
+                        type="radio"
+                        value="shows"
+                        onChange={onRadioChange}
+                        checked={isShowsSearch}
+                    />
+                </label>
+                <label htmlFor="actors-search">
+                    Actors{" "}
+                    <input
+                        id="actors-search"
+                        type="radio"
+                        value="people"
+                        onChange={onRadioChange}
+                        checked={!isShowsSearch}
+                    />
+                </label>
+            </div>
             <button type="button" onClick={onSearch}>
                 search
             </button>
