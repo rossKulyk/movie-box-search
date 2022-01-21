@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import MainPageLayout from "../components/MainPageLayout";
+import ShowGrid from "../shows/ShowGrid";
+import ActorGrid from "../actors/ActorGrid";
 import { apiGet } from "../misc/config";
 
 export default function Home() {
@@ -36,22 +38,24 @@ export default function Home() {
         }
         if (results && results.length > 0) {
             // teneraty, return based on fetched result, item-show or item-person
-            return results[0].show
-                ? results.map((item) => {
-                      return <div key={item.show.id}>{item.show.name}</div>;
-                  })
-                : results.map((item) => {
-                      return <div key={item.person.id}>{item.person.name}</div>;
-                  });
+            return results[0].show ? (
+                <ShowGrid data={results} />
+            ) : (
+                <ActorGrid data={results} />
+            );
+            // ? results.map((item) => {
+            //       return <div key={item.show.id}>{item.show.name}</div>;
+            //   })
+            // : results.map((item) => {
+            //       return <div key={item.person.id}>{item.person.name}</div>;
+            //   });
         }
         return null;
     }
 
     function onRadioChange(evt) {
-        // evt.target.value
         setSearchOption(evt.target.value);
     }
-    // console.log("SearchOption > ", searchOption);
 
     return (
         <MainPageLayout>
