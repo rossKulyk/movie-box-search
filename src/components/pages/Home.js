@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import MainPageLayout from "../MainPageLayout";
 import ShowGrid from "../shows/ShowGrid";
 import ActorGrid from "../actors/ActorGrid";
@@ -10,14 +10,6 @@ export default function Home() {
     const [searchOption, setSearchOption] = useState("shows");
     // boolean to display if searchOption is true
     const isShowsSearch = searchOption === "shows";
-
-    //
-    useEffect(() => {
-        console.log("HOME use effect run!");
-        return () => {
-            console.log("HOME use effect EXIT!");
-        };
-    }, []);
 
     function onInputchange(evt) {
         setInput(evt.target.value);
