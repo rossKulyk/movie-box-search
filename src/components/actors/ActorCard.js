@@ -1,6 +1,5 @@
 // display data
 import React from "react";
-// import { Link } from "react-router-dom";
 
 export default function ActorCard({
     name,
@@ -21,8 +20,8 @@ export default function ActorCard({
     );
 
     return (
-        <div>
-            <div>
+        <div className="show-card--div">
+            <div className="show-card--img-wrapper">
                 <img src={image} alt="actor" />
             </div>
             <h1>

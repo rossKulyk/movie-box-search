@@ -1,12 +1,12 @@
 // business logic and map elements
 import React from "react";
 import ActorCard from "./ActorCard";
-import notFound from "../img/not-found.png";
+import notFound from "../../img/not-found.png";
 
 export default function ActorGrid({ data }) {
     console.log("ActorGrid data > ", data);
     return (
-        <div>
+        <div className="show-grid--flex">
             {data.map(({ person }) => {
                 return (
                     <ActorCard

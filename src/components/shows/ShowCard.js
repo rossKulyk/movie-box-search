@@ -12,11 +12,11 @@ export default function ShowCard({ id, name, image, summary }) {
               .replace(/<.+?>/g, "")}...`
         : "No description";
 
-    console.log("ShowCard shortSummary > ", shortSummary);
+    // console.log("ShowCard shortSummary > ", shortSummary);
 
     return (
-        <div>
-            <div>
+        <div className="show-card--div">
+            <div className="show-card--img-wrapper">
                 <img src={image} alt="show" />
             </div>
 
@@ -24,7 +24,7 @@ export default function ShowCard({ id, name, image, summary }) {
 
             <p>{shortSummary}</p>
 
-            <div>
+            <div className="showcard-btns--div">
                 <Link to={`/show/${id}`}>Read more</Link>
                 <button type="button">Star me</button>
             </div>

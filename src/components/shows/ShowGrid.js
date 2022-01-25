@@ -1,12 +1,12 @@
 // business logic and map elements
 import React from "react";
 import ShowCard from "./ShowCard";
-import notFound from "../img/not-found.png";
+import notFound from "../../img/not-found.png";
 
 export default function ShowGrid({ data }) {
     console.log("ShowGrid data > ", data);
     return (
-        <div>
+        <div className="show-grid--flex">
             {data.map(({ show }) => {
                 return (
                     <ShowCard
