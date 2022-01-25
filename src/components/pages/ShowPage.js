@@ -1,6 +1,11 @@
 import React, { useEffect, useReducer } from "react";
 import { useParams } from "react-router-dom";
+
 import { apiGet } from "../../misc/config";
+import ShowMainData from "../shows/ShowMainData";
+import DetailsData from "../shows/DetailsData";
+import SeasonsData from "../shows/SeasonsData";
+import CastData from "../shows/CastData";
 
 const initState = {
     show: null,
@@ -31,8 +36,10 @@ export default function ShowPage() {
 
     const { id } = useParams();
     // Implemeting useReducer instead of useState
-    const [state, dispatch] = useReducer(reducer, initState);
-    console.log("ShowPage STATE > ", state);
+    const [{ show, errorMsg, isLoading }, dispatch] = useReducer(
+        reducer,
+        initState
+    );
 
     useEffect(() => {
         // Var to indicate if component is mounted or not, and do clean-up
@@ -60,10 +67,39 @@ export default function ShowPage() {
         };
     }, [id]);
 
-    // console.log("ShowPage show > ", show);
+    console.log("ShowPage useReducer SHOW > ", show);
 
-    // if (isLoading) return <div>Data is loading</div>;
-    // if (errorMsg) return <div>Error is occured: {errorMsg}</div>;
+    if (isLoading) return <div>Data is loading</div>;
+    if (errorMsg) return <div>Error is occured: {errorMsg}</div>;
 
-    return <div>Single Show Page:</div>;
+    return (
+        <div>
+            Single Show Page:
+            <ShowMainData
+                image={show.image}
+                name={show.name}
+                rating={show.rating}
+                tags={show.genres}
+                summary={show.summary}
+            />
+            <div>
+                <h2>Details</h2>
+                <DetailsData
+                    network={show.network}
+                    status={show.status}
+                    premiered={show.premiered}
+                />
+            </div>
+            <div>
+                <h2>Seasons</h2>
+                {/* eslint-disable-next-line no-underscore-dangle */}
+                <SeasonsData seasons={show._embedded.seasons} />
+            </div>
+            <div>
+                <h2>Cast</h2>
+                {/* eslint-disable-next-line no-underscore-dangle */}
+                <CastData cast={show._embedded.cast} />
+            </div>
+        </div>
+    );
 }
