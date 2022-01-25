@@ -55,7 +55,7 @@ export function useLastQuery(key = "lastQuery") {
         return persistedData ? JSON.parse(persistedData) : "";
     });
 
-    // setInput with newState, set key-item to session storeage
+    // setInput(update) with newState, set key-item to session storeage
     function setPersistedInput(newState) {
         setInput(newState);
         console.log("useLastQuery, setPersistedInput() newState > ", newState);
