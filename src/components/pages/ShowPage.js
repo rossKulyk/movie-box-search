@@ -73,7 +73,7 @@ export default function ShowPage() {
     if (errorMsg) return <div>Error is occured: {errorMsg}</div>;
 
     return (
-        <div>
+        <div className="show-page--wrapper">
             Single Show Page:
             <ShowMainData
                 image={show.image}
@@ -82,7 +82,7 @@ export default function ShowPage() {
                 tags={show.genres}
                 summary={show.summary}
             />
-            <div>
+            <div className="show-page--info">
                 <h2>Details</h2>
                 <DetailsData
                     network={show.network}
@@ -90,12 +90,12 @@ export default function ShowPage() {
                     premiered={show.premiered}
                 />
             </div>
-            <div>
+            <div className="show-page--info">
                 <h2>Seasons</h2>
                 {/* eslint-disable-next-line no-underscore-dangle */}
                 <SeasonsData seasons={show._embedded.seasons} />
             </div>
-            <div>
+            <div className="show-page--info">
                 <h2>Cast</h2>
                 {/* eslint-disable-next-line no-underscore-dangle */}
                 <CastData cast={show._embedded.cast} />
