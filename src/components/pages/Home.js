@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+
 import MainPageLayout from "../MainPageLayout";
 import ShowGrid from "../shows/ShowGrid";
 import ActorGrid from "../actors/ActorGrid";
 import { apiGet } from "../../misc/config";
+import { useLastQuery } from "../../misc/customHooks";
 
 export default function Home() {
-    const [input, setInput] = useState("");
+    const [input, setInput] = useLastQuery();
     const [results, setResults] = useState(null);
     const [searchOption, setSearchOption] = useState("shows");
 
