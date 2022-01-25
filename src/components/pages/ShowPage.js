@@ -13,6 +13,8 @@ const initState = {
     errorMsg: null
 };
 
+// create reducer
+// TODO: create action types file to import
 const reducer = (prevState, action) => {
     switch (action.type) {
         case "FETCH_SUCCESS":
