@@ -8,6 +8,7 @@ export default function Home() {
     const [input, setInput] = useState("");
     const [results, setResults] = useState(null);
     const [searchOption, setSearchOption] = useState("shows");
+
     // boolean to display if searchOption is true
     const isShowsSearch = searchOption === "shows";
 
