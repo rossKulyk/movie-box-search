@@ -9,15 +9,15 @@ export default function ActorCard({
     deathday,
     gender
 }) {
-    console.log(
-        "ActorCard data > ",
-        name,
-        image,
-        country,
-        birthday,
-        deathday,
-        gender
-    );
+    // console.log(
+    //     "ActorCard data > ",
+    //     name,
+    //     image,
+    //     country,
+    //     birthday,
+    //     deathday,
+    //     gender
+    // );
 
     return (
         <div className="show-card--div">

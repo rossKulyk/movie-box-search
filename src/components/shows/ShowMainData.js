@@ -9,7 +9,9 @@ export default function ShowMainData({ name, rating, summary, tags, image }) {
                 <div className="show-main-data--head">
                     <h1>{name}</h1>
                     <div>
-                        <div className="star" />
+                        {/* <div className={isStarred ? "star-active" : "star"} /> */}
+                        <div className="star-active" />
+
                         <span>{rating.average || "N/A"}</span>
                     </div>
                 </div>

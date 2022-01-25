@@ -64,12 +64,9 @@ export default function ShowPage() {
             });
         // do the cleanup
         return () => {
-            // console.log("ShowPage useEffect cleanup ");
             isMounted = false;
         };
     }, [id]);
-
-    console.log("ShowPage useReducer SHOW > ", show);
 
     if (isLoading) return <div>Data is loading</div>;
     if (errorMsg) return <div>Error is occured: {errorMsg}</div>;

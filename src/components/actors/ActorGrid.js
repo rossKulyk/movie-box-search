@@ -4,7 +4,7 @@ import ActorCard from "./ActorCard";
 import notFound from "../../img/not-found.png";
 
 export default function ActorGrid({ data }) {
-    console.log("ActorGrid data > ", data);
+    // console.log("ActorGrid data > ", data);
     return (
         <div className="show-grid--flex">
             {data.map(({ person }) => {
