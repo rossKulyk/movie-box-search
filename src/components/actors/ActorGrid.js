@@ -1,12 +1,14 @@
 // business logic and map elements
 import React from "react";
+import FadeIn from "react-fade-in";
+
 import ActorCard from "./ActorCard";
 import notFound from "../../img/not-found.png";
 
 export default function ActorGrid({ data }) {
     // console.log("ActorGrid data > ", data);
     return (
-        <div className="show-grid--flex">
+        <FadeIn delay="100" className="show-grid--flex">
             {data.map(({ person }) => {
                 return (
                     <ActorCard
@@ -20,6 +22,6 @@ export default function ActorGrid({ data }) {
                     />
                 );
             })}
-        </div>
+        </FadeIn>
     );
 }
