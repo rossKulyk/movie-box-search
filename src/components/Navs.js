@@ -9,11 +9,13 @@ const LINKS = [
 export default function Navs() {
     return (
         <div>
-            <ul>
+            <ul className="navs--list">
                 {LINKS.map((item, idx) => {
                     return (
                         <li key={idx}>
-                            <Link to={item.to}>{item.text}</Link>
+                            <Link to={item.to} className="navs--links">
+                                {item.text}
+                            </Link>
                         </li>
                     );
                 })}

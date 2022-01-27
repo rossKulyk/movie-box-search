@@ -1,3 +1,8 @@
+:root {
+    --color-blue: "#2400ff";
+    --color-gray: "#c6c6c6";
+    --color-dark: "#353535";
+}
 body {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
@@ -12,8 +17,121 @@ h1 {
 p {
     margin: 0;
 }
+/* Navs */
+.navs--list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0 0 30px;
+    padding: 0;
+}
+.navs--links {
+    margin: 0 10px;
+    padding: 3px 15px;
+    position: relative;
+    text-decoration: none;
+    /* color: var(--color-gray); */
+    color: grey;
+}
+.navs--links :active {
+    /* color: var(--color-blue); */
+    color: blue;
+    margin: 0 10px;
+    padding: 3px 15px;
+    position: relative;
+    text-decoration: none;
+}
+.navs--links ::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2px;
+    left: 0%;
+    bottom: 0;
+    /* background-color: var(--color-blue); */
+    background-color: blue;
+    animation: slide-in 0.3s ease-in forwards;
+}
+/* Title */
+.title-wrapper {
+    text-align: center;
+    margin: 0 0 40px;
+}
+.title-wrapper > h1 {
+    color: blue;
 
-/* ActorGrid || ShowGrid */
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+}
+.title-wrapper > p {
+    /* color: var(--color-dark); */
+    color: grey;
+    margin: 0;
+}
+/* ---------------------- Home -------------------------- */
+.search-input {
+    display: block;
+    font-family: "Roboto", sans-serif;
+    width: 200px;
+    margin: auto;
+    outline: none;
+    padding: 13px 15px;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0px 0px 10px 0px rgba(219, 219, 219, 0.5);
+    font-size: 14px;
+    border-radius: 12px;
+    color: #8d8d8d;
+}
+.placeholder {
+    font-weight: 300;
+    color: #8d8d8d;
+}
+
+/* Radio input wrapper */
+.radio-input-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.radio-input-wrapper > div {
+    margin: 0 15px;
+}
+/* search button */
+.search-button-wrapper {
+    text-align: center;
+    margin-bottom: 35px;
+}
+.search-button-wrapper > button {
+    color: #fff;
+    background-color: blue;
+    margin: auto;
+    padding: 10px 50px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+}
+/* Search buttun */
+/* export const SearchButtonWrapper = styled.div`
+  text-align: center;
+  margin-bottom: 35px;
+
+  button {
+    color: #fff;
+    background-color: ${({ theme }) => theme.mainColors.blue};
+    margin: auto;
+    padding: 10px 50px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+`; */
+/* --------------------- ActorGrid || ShowGrid -------------------- */
 .show-grid--flex {
     display: flex;
     justify-content: center;
@@ -273,3 +391,24 @@ export const InfoBlock = styled.div`
 .cast-data--actor {
     margin-left: 25px;
 }
+
+/* Cusstom radio button */
+/* .custom-radio-btn {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    font-size: 13px;
+    user-select: none;
+    font-weight: 700;
+    line-height: 1.65;
+} */
+/* .custom-radio-btn--input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+} */
+/* .custom-radio-btn--input:checked {
+    background-color: #fff;
+    border: 2px solid blue;
+} */
