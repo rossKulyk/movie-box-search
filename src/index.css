@@ -112,95 +112,6 @@ p {
     outline: none;
     border-radius: 12px;
 }
-/* Search buttun */
-/* export const SearchButtonWrapper = styled.div`
-  text-align: center;
-  margin-bottom: 35px;
-
-  button {
-    color: #fff;
-    background-color: ${({ theme }) => theme.mainColors.blue};
-    margin: auto;
-    padding: 10px 50px;
-    font-size: 15px;
-    border: none;
-    outline: none;
-    border-radius: 12px;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-`; */
-/* --------------------- ActorGrid || ShowGrid -------------------- */
-.show-grid--flex {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-/* ShowCard */
-.show-card--div {
-    width: 300px;
-    height: 100%;
-    margin: 0 15px 40px;
-}
-.show-card--img-wrapper {
-    width: 100%;
-    border-radius: 40px;
-    height: 420px;
-    overflow: hidden;
-    border: 1px solid #ddd;
-}
-.show-card--img-wrapper > img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-}
-
-.show-card--div > h1 {
-    margin: 10px 0;
-    font-size: 21px;
-}
-
-.show-card--div > p {
-    margin: 0;
-}
-
-/* Show Card components */
-.showcard-btns--div {
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.showcard-btns--div > a {
-    text-decoration-color: #000;
-    color: #000;
-}
-.showcard-btns--div > :hover {
-    text-decoration-color: blue;
-    color: blue;
-}
-button {
-    outline: none;
-    border: 1px solid #8e8e8e;
-    border-radius: 15px;
-    padding: 5px 20px;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-button > :hover {
-    cursor: pointer;
-}
-
-/* Actor Card */
-/* .deathdayparagraph {
-    margin: 0;
-    margin-top: 15px;
-    font-weight: bold;
-} */
 
 /* STAR ShowMainData component */
 .star {
@@ -253,30 +164,6 @@ button > :hover {
     margin-bottom: 30px;
     font-size: 22px;
 }
-/* export const ShowPageWrapper = styled.div`
-  padding: 0 20px;
-
-  @media only screen and (min-width: 516px) {
-    padding: 0 40px;
-  }
-
-  @media only screen and (min-width: 768px) {
-    padding: 0 60px;
-  }
-
-  @media only screen and (min-width: 992px) {
-    padding: 0 80px;
-  }
-`;
-
-export const InfoBlock = styled.div`
-  margin-bottom: 40px;
-  h2 {
-    margin: 0;
-    margin-bottom: 30px;
-    font-size: 22px;
-  }
-`; */
 
 /* ShowMainPage */
 .show-main-data--wrapper {

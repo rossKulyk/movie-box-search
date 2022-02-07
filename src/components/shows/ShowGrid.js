@@ -7,11 +7,14 @@ import ShowCard from "./ShowCard";
 import notFound from "../../img/not-found.png";
 import { useShows } from "../../misc/customHooks";
 
+import { FlexGridWrapper } from "../styled";
+
 export default function ShowGrid({ data }) {
     const [starShows, dispatchStar] = useShows();
     // console.log("ShowGrid data > ", data);
     return (
-        <FadeIn delay="100" className="show-grid--flex">
+        // <FadeIn delay="100" className="show-grid--flex">
+        <FlexGridWrapper delay="100" className="show-grid--flex">
             {data.map(({ show }) => {
                 const isStarred = starShows.includes(show.id);
 
@@ -35,6 +38,6 @@ export default function ShowGrid({ data }) {
                     />
                 );
             })}
-        </FadeIn>
+        </FlexGridWrapper>
     );
 }

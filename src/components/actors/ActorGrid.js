@@ -1,14 +1,16 @@
+/* eslint-disable no-unused-vars */
 // business logic and map elements
 import React from "react";
 import FadeIn from "react-fade-in";
 
 import ActorCard from "./ActorCard";
 import notFound from "../../img/not-found.png";
+import { FlexGridWrapper } from "../styled";
 
 export default function ActorGrid({ data }) {
     // console.log("ActorGrid data > ", data);
     return (
-        <FadeIn delay="100" className="show-grid--flex">
+        <FlexGridWrapper delay="100" className="show-grid--flex">
             {data.map(({ person }) => {
                 return (
                     <ActorCard
@@ -22,6 +24,6 @@ export default function ActorGrid({ data }) {
                     />
                 );
             })}
-        </FadeIn>
+        </FlexGridWrapper>
     );
 }

@@ -1,5 +1,6 @@
 // display data
 import React from "react";
+import { StyledActorCardWrapper } from "./ActorCard.styled";
 
 export default function ActorCard({
     name,
@@ -20,7 +21,7 @@ export default function ActorCard({
     // );
 
     return (
-        <div className="show-card--div">
+        <StyledActorCardWrapper>
             <div className="show-card--img-wrapper">
                 <img src={image} alt="actor" />
             </div>
@@ -30,6 +31,6 @@ export default function ActorCard({
             <p>{country ? `Comes from ${country.name}` : "No country known"}</p>
             {birthday ? <p>Born {birthday}</p> : null}
             <p>{deathday ? `Died ${deathday}` : "Alive"}</p>
-        </div>
+        </StyledActorCardWrapper>
     );
 }

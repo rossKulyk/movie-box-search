@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import { SearchCard } from "../styled";
+import { StyledShowCardWrapper } from "./ShowCard.styled";
 
 // display data
 export default function ShowCard({
@@ -20,7 +22,7 @@ export default function ShowCard({
         : "No description";
 
     return (
-        <div className="show-card--div">
+        <StyledShowCardWrapper>
             <div className="show-card--img-wrapper">
                 <img src={image} alt="show" />
             </div>
@@ -29,12 +31,12 @@ export default function ShowCard({
 
             <p>{shortSummary}</p>
 
-            <div className="showcard-btns--div">
+            <div className="showcard-btns">
                 <Link to={`/show/${id}`}>Read more</Link>
                 <button type="button" onClick={onStarClick}>
                     <div className={isStarred ? "star-active" : "star"} />
                 </button>
             </div>
-        </div>
+        </StyledShowCardWrapper>
     );
 }
