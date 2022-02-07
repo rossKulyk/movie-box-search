@@ -9,7 +9,7 @@ import { useShows } from "../../misc/customHooks";
 
 export default function ShowGrid({ data }) {
     const [starShows, dispatchStar] = useShows();
-    console.log("ShowGrid data > ", data);
+    // console.log("ShowGrid data > ", data);
     return (
         <FadeIn delay="100" className="show-grid--flex">
             {data.map(({ show }) => {
