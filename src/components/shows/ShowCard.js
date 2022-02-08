@@ -36,7 +36,6 @@ export default function ShowCard({
             <div className="showcard-btns">
                 <Link to={`/show/${id}`}>Read more</Link>
                 <button type="button" onClick={onStarClick}>
-                    {/* <div className={isStarred ? "star-active" : "star"} /> */}
                     <Star active={isStarred} />
                 </button>
             </div>

@@ -17,41 +17,7 @@ h1 {
 p {
     margin: 0;
 }
-/* Navs */
-.navs--list {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0 0 30px;
-    padding: 0;
-}
-.navs--links {
-    margin: 0 10px;
-    padding: 3px 15px;
-    position: relative;
-    text-decoration: none;
-    /* color: var(--color-gray); */
-    color: grey;
-}
-.navs--links :active {
-    /* color: var(--color-blue); */
-    color: blue;
-    margin: 0 10px;
-    padding: 3px 15px;
-    position: relative;
-    text-decoration: none;
-}
-.navs--links ::after {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 2px;
-    left: 0%;
-    bottom: 0;
-    /* background-color: var(--color-blue); */
-    background-color: blue;
-    animation: slide-in 0.3s ease-in forwards;
-}
+
 /* Title */
 .title-wrapper {
     text-align: center;

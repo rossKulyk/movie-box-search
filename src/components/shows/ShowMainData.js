@@ -15,7 +15,6 @@ export default function ShowMainData({ name, rating, summary, tags, image }) {
                 <MainDataHeadline>
                     <h1>{name}</h1>
                     <div>
-                        {/* <div className={isStarred ? "star-active" : "star"} /> */}
                         <Star active />
 
                         <span>{rating.average || "N/A"}</span>

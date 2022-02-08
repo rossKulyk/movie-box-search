@@ -1,25 +1,35 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { NavList, LinkStyled } from "./Navs.styled";
 
 const LINKS = [
     { to: "/", text: "Home" },
-    { to: "/start", text: "Start" }
+    { to: "/stars", text: "Stars" }
 ];
 
 export default function Navs() {
+    const location = useLocation();
+    console.log("NAV LOCATION > ", location);
     return (
         <div>
-            <ul className="navs--list">
+            <NavList>
                 {LINKS.map((item, idx) => {
                     return (
                         <li key={idx}>
-                            <Link to={item.to} className="navs--links">
+                            <LinkStyled
+                                to={item.to}
+                                className={
+                                    item.to === location.pathname
+                                        ? "active"
+                                        : ""
+                                }
+                            >
                                 {item.text}
-                            </Link>
+                            </LinkStyled>
                         </li>
                     );
                 })}
-            </ul>
+            </NavList>
         </div>
     );
 }

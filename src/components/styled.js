@@ -41,7 +41,7 @@ export const Star = styled.div`
     width: 18px;
     height: 18px;
     background-color: ${(props) => {
-        console.log("props", props);
+        // console.log("props", props);
         return props.active ? "#ffc806" : "#d0c9ff";
     }};
 
