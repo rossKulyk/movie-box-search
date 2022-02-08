@@ -1,4 +1,5 @@
 import React from "react";
+import { RadioWrapper } from "./CustomRadio.styled";
 
 // Pass-in props: id, value, checked, onChange, label.
 // Redirect the rest of passed props into input element. type-redio need to be after the spread operator
@@ -7,13 +8,14 @@ export default function CustomRadioBtn({ label, ...restProps }) {
     // console.log("CustomRadioBtn restProps > ", restProps);
 
     return (
-        <label htmlFor={restProps.id} className="custom-radio-btn">
+        <RadioWrapper htmlFor={restProps.id}>
             {label}{" "}
             <input
                 {...restProps}
                 type="radio"
                 className="custom-radio-btn--input"
             />
-        </label>
+            <span />
+        </RadioWrapper>
     );
 }

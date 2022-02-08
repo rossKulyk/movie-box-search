@@ -12,8 +12,8 @@ export const StyledShowCardWrapper = styled(SearchCard)`
             text-decoration-color: #000;
             color: #000;
             &:hover {
-                text-decoration-color: blue;
-                color: blue;
+                text-decoration-color: red;
+                color: red;
             }
         }
         button {

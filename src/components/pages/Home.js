@@ -8,6 +8,11 @@ import CustomRadioBtn from "../CustomRadioBtn";
 
 import { apiGet } from "../../misc/config";
 import { useLastQuery } from "../../misc/customHooks";
+import {
+    SearchInput,
+    RadioInputsWrapper,
+    SearchButtonWrapper
+} from "./pages-styles/Home.styled";
 
 export default function Home() {
     const [input, setInput] = useLastQuery();
@@ -65,7 +70,7 @@ export default function Home() {
 
     return (
         <MainPageLayout>
-            <input
+            <SearchInput
                 className="search-input"
                 type="text"
                 placeholder="Search"
@@ -73,7 +78,7 @@ export default function Home() {
                 onKeyDown={onKeyDown}
                 value={input}
             />
-            <div className="radio-input-wrapper">
+            <RadioInputsWrapper>
                 <div>
                     <CustomRadioBtn
                         label="Shows"
@@ -112,12 +117,12 @@ export default function Home() {
                         />
                     </label> */}
                 </div>
-            </div>
-            <div className="search-button-wrapper">
+            </RadioInputsWrapper>
+            <SearchButtonWrapper>
                 <button type="button" onClick={onSearch}>
                     search
                 </button>
-            </div>
+            </SearchButtonWrapper>
             {rendeResults()}
         </MainPageLayout>
     );
