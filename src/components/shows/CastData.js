@@ -1,14 +1,15 @@
 import React from "react";
 import notFound from "../../img/not-found.png";
+import { CastListWrapper } from "./shows-styles/Cast.styled";
 
 export default function CastData({ cast }) {
     // console.log("CastData cast > ", cast);
     return (
-        <div className="cast-data--wrapper">
+        <CastListWrapper>
             {cast.length
                 ? cast.map(({ person, character, voice }, key) => (
-                      <div key={key} className="cast-data--item">
-                          <div className="cast-data--img-wrapper">
+                      <div key={key} className="cast-list--item">
+                          <div className="cast-list--img-wrapper">
                               <img
                                   src={
                                       person.image
@@ -16,10 +17,10 @@ export default function CastData({ cast }) {
                                           : notFound
                                   }
                                   alt="cast-person"
-                                  className="cast-data--img"
+                                  className="cast-list--img"
                               />
                           </div>
-                          <div className="cast-data--actor">
+                          <div className="cast-list--actor">
                               <span>
                                   <span style={{ fontWeight: "bold" }}>
                                       {person.name}
@@ -30,6 +31,6 @@ export default function CastData({ cast }) {
                       </div>
                   ))
                 : "N/A"}
-        </div>
+        </CastListWrapper>
     );
 }

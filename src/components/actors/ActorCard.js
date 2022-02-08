@@ -1,6 +1,6 @@
 // display data
 import React from "react";
-import { StyledActorCardWrapper } from "./ActorCard.styled";
+import { StyledActorCardWrapper } from "./actors-styles/ActorCard.styled";
 
 export default function ActorCard({
     name,

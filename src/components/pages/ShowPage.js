@@ -7,6 +7,7 @@ import ShowMainData from "../shows/ShowMainData";
 import DetailsData from "../shows/DetailsData";
 import SeasonsData from "../shows/SeasonsData";
 import CastData from "../shows/CastData";
+import { ShowPageWrapper, ShowPageInfoBlock } from "./pages-styles/Show.styled";
 
 export default function ShowPage() {
     const { id } = useParams();
@@ -17,7 +18,7 @@ export default function ShowPage() {
     if (errorMsg) return <div>Error is occured: {errorMsg}</div>;
 
     return (
-        <div className="show-page--wrapper">
+        <ShowPageWrapper>
             Single Show Page:
             <ShowMainData
                 image={show.image}
@@ -26,24 +27,24 @@ export default function ShowPage() {
                 tags={show.genres}
                 summary={show.summary}
             />
-            <div className="show-page--info">
+            <ShowPageInfoBlock>
                 <h2>Details</h2>
                 <DetailsData
                     network={show.network}
                     status={show.status}
                     premiered={show.premiered}
                 />
-            </div>
-            <div className="show-page--info">
+            </ShowPageInfoBlock>
+            <ShowPageInfoBlock>
                 <h2>Seasons</h2>
                 {/* eslint-disable-next-line no-underscore-dangle */}
                 <SeasonsData seasons={show._embedded.seasons} />
-            </div>
-            <div className="show-page--info">
+            </ShowPageInfoBlock>
+            <ShowPageInfoBlock>
                 <h2>Cast</h2>
                 {/* eslint-disable-next-line no-underscore-dangle */}
                 <CastData cast={show._embedded.cast} />
-            </div>
-        </div>
+            </ShowPageInfoBlock>
+        </ShowPageWrapper>
     );
 }

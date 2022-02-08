@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import { SearchCard } from "../styled";
-import { StyledShowCardWrapper } from "./ShowCard.styled";
+import { StyledShowCardWrapper } from "./shows-styles/ShowCard.styled";
 
 // display data
 export default function ShowCard({

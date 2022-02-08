@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SearchCard } from "../styled";
+import { SearchCard } from "../../styled";
 
 // Style components related to show-card components and extend SearchCard styles
 export const StyledShowCardWrapper = styled(SearchCard)`

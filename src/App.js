@@ -5,6 +5,14 @@ import Home from "./components/pages/Home";
 import StarPage from "./components/pages/StarPage";
 import ShowPage from "./components/pages/ShowPage";
 
+// const theme = {
+//     mainColors: {
+//         blue: "#2400ff",
+//         gray: "#c6c6c6",
+//         dark: "#353535"
+//     }
+// };
+
 function App() {
     return (
         <Switch>
