@@ -5,6 +5,7 @@ import {
     MainDataHeadline,
     MainDataTagList
 } from "./shows-styles/ShowMainData.styled";
+import { Star } from "../styled";
 
 export default function ShowMainData({ name, rating, summary, tags, image }) {
     return (
@@ -15,7 +16,7 @@ export default function ShowMainData({ name, rating, summary, tags, image }) {
                     <h1>{name}</h1>
                     <div>
                         {/* <div className={isStarred ? "star-active" : "star"} /> */}
-                        <div className="star-active" />
+                        <Star active />
 
                         <span>{rating.average || "N/A"}</span>
                     </div>

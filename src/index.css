@@ -113,8 +113,7 @@ p {
     border-radius: 12px;
 }
 
-/* STAR ShowMainData component */
-.star {
+/* STAR ShowMainData component .star {
     display: inline-block;
     width: 18px;
     height: 18px;
@@ -151,52 +150,4 @@ p {
         2% 35%,
         39% 35%
     );
-}
-
-/* CastData */
-.cast-data--wrapper {
-    display: flex;
-    flex-wrap: wrap;
-}
-.cast-data--item {
-    flex: 1 0 50%;
-    display: flex;
-    margin-bottom: 20px;
-    align-items: center;
-}
-.cast-data--img-wrapper {
-    width: 50px;
-    min-width: 50px;
-    height: 50px;
-    overflow: hidden;
-    border-radius: 50%;
-}
-.cast-data--img-wrapper > img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-.cast-data--actor {
-    margin-left: 25px;
-}
-
-/* Cusstom radio button */
-/* .custom-radio-btn {
-    display: block;
-    position: relative;
-    padding-left: 25px;
-    cursor: pointer;
-    font-size: 13px;
-    user-select: none;
-    font-weight: 700;
-    line-height: 1.65;
-} */
-/* .custom-radio-btn--input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-} */
-/* .custom-radio-btn--input:checked {
-    background-color: #fff;
-    border: 2px solid blue;
 } */

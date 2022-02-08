@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
 // import { SearchCard } from "../styled";
 import { StyledShowCardWrapper } from "./shows-styles/ShowCard.styled";
+import { Star } from "../styled";
 
 // display data
 export default function ShowCard({
@@ -34,7 +36,8 @@ export default function ShowCard({
             <div className="showcard-btns">
                 <Link to={`/show/${id}`}>Read more</Link>
                 <button type="button" onClick={onStarClick}>
-                    <div className={isStarred ? "star-active" : "star"} />
+                    {/* <div className={isStarred ? "star-active" : "star"} /> */}
+                    <Star active={isStarred} />
                 </button>
             </div>
         </StyledShowCardWrapper>

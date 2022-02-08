@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable no-unused-vars */
 // business logic and map elements
 import React from "react";
@@ -32,7 +33,6 @@ export default function ShowGrid({ data }) {
                         name={show.name}
                         image={show.image ? show.image.medium : notFound}
                         summary={show.summary}
-                        // eslint-disable-next-line react/jsx-no-bind
                         onStarClick={onStarClick}
                         isStarred={isStarred}
                     />
